@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "112034668666",
+    "project_id": "fir-storeapp-3554a",
+    "storage_bucket": "fir-storeapp-3554a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112034668666:android:69c0b14332375194281bc3",
+        "android_client_info": {
+          "package_name": "com.madelyngander.firebasestoreapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112034668666-p30a9n6qjvkr4n4geo029hh7p0qanict.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.madelyngander.firebasestoreapp",
+            "certificate_hash": "c92a46435d6236291bacc1cdcdaa10e9ad791479"
+          }
+        },
+        {
+          "client_id": "112034668666-uq2rkee3gqsjs77cim6dqdpgv8s820ra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXSs8mEzunuJuFb8tgE9sYsryG7Zn01hM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112034668666-uq2rkee3gqsjs77cim6dqdpgv8s820ra.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
