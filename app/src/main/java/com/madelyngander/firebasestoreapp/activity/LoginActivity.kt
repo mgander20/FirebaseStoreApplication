@@ -1,17 +1,19 @@
-package com.madelyngander.firebasestoreapp
+package com.madelyngander.firebasestoreapp.activity
 
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.madelyngander.firebasestoreapp.databinding.ActivityLoginBinding
 
-class SplashActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
+    private var binding : ActivityLoginBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
 
         @Suppress("DEPRECATION")
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
@@ -23,14 +25,9 @@ class SplashActivity : AppCompatActivity() {
             )
         }
 
-        @Suppress("DEPRECATION")
-        Handler().postDelayed(
-            {
-                //Launch the main activity
-                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-                finish()    //Call this when your activity is done and should be finished
-            },
-            2500
-        )
+        binding?.tvRegister?.setOnClickListener{
+            val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

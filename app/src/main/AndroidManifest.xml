@@ -10,10 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseStoreApp">
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.FirebaseStoreApp.NoActionBar"
-            android:exported="true">
+            android:theme="@style/Theme.FirebaseStoreApp.NoActionBar" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FirebaseStoreApp.NoActionBar" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FirebaseStoreApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +34,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:name=".activity.MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
