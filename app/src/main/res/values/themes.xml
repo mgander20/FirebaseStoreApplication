@@ -17,5 +17,7 @@
     <style name="Theme.FirebaseStoreApp.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">#FF6902c4</item>
+        <item name="colorAccent">#ffbaa5ff</item>
     </style>
 </resources>

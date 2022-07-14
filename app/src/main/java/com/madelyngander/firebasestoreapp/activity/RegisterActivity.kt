@@ -51,10 +51,16 @@ class RegisterActivity : BaseActivity() {
     }
 
     private fun registerUser(){
-        if(validateRegisterDetails()){val email: String = binding?.etEmail?.text.toString().trim{it<=' '}
+        if(validateRegisterDetails()){
+
+            showProgressDialog(resources.getString(R.string.please_wait))
+
+            val email: String = binding?.etEmail?.text.toString().trim{it<=' '}
             val password: String = binding?.etPassword?.text.toString().trim{it<=' '}
+
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener { task ->
+                    hideProgressDialog()
                     if (task.isSuccessful) {
                         Toast.makeText(
                             this@RegisterActivity,

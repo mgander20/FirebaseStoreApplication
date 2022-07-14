@@ -40,10 +40,12 @@ class LoginActivity : BaseActivity() {
 
     private fun loginUser(){
         if(validateLoginDetails()){
+            showProgressDialog(resources.getString(R.string.please_wait))
             val email: String = binding?.etEmail?.text.toString().trim{it<=' '}
             val password: String = binding?.etPassword?.text.toString().trim{it<=' '}
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener { task ->
+                    hideProgressDialog()
                     if (task.isSuccessful) {
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
