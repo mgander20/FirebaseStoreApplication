@@ -1,7 +1,6 @@
 package com.madelyngander.firebasestoreapp.activity
 
 import android.app.Dialog
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar

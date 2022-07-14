@@ -62,24 +62,18 @@ class RegisterActivity : BaseActivity() {
                 .addOnCompleteListener { task ->
                     hideProgressDialog()
                     if (task.isSuccessful) {
-                        Toast.makeText(
-                            this@RegisterActivity,
-                            "You have been registered successfully!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        val firebaseUser: FirebaseUser = task.result!!.user!!
-                        val intent = Intent(this@RegisterActivity, MainActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        intent.putExtra("user_id", firebaseUser.uid)
-                        intent.putExtra("email_id", email)
-                        startActivity(intent)
+                        showErrorSnackBar("You have been registered successfully!", false)
+
+//                        val firebaseUser: FirebaseUser = task.result!!.user!!
+//                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+//                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//                        intent.putExtra("user_id", firebaseUser.uid)
+//                        intent.putExtra("email_id", email)
+//                        startActivity(intent)
+                        FirebaseAuth.getInstance().signOut()
                         finish()
                     } else {
-                        Toast.makeText(
-                            this@RegisterActivity,
-                            task.exception!!.message.toString(),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        showErrorSnackBar(task.exception!!.message.toString(),true)
                     }
                 }
         }

@@ -4,9 +4,9 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.madelyngander.firebasestoreapp.R
 import com.madelyngander.firebasestoreapp.databinding.ActivityLoginBinding
@@ -27,15 +27,18 @@ class LoginActivity : BaseActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         }
-
-        binding?.tvRegister?.setOnClickListener{
+        binding?.tvRegister?.setOnClickListener {
             val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)
         }
-
         binding?.btnLogin?.setOnClickListener{
             loginUser()
         }
+        binding?.tvForgotPassword?.setOnClickListener{
+            val intent = Intent(this@LoginActivity, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun loginUser(){
@@ -54,11 +57,8 @@ class LoginActivity : BaseActivity() {
                         startActivity(intent)
                         finish()
                     } else {
-                        Toast.makeText(
-                            this@LoginActivity,
-                            task.exception!!.message.toString(),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        showErrorSnackBar(task.exception!!.message.toString(),true)
+
                     }
                 }
         }

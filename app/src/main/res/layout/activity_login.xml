@@ -23,12 +23,12 @@
             android:scaleType="fitXY"/>
 
         <ImageView
-            android:layout_width="@dimen/auth_logo_size"
-            android:layout_height="@dimen/auth_logo_size"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
-            android:src="@drawable/login_screen_logo"
+            android:src="@drawable/firestore_logo_foreground"
             />
 
     </FrameLayout>
