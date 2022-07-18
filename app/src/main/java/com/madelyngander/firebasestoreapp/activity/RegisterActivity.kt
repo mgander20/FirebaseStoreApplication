@@ -11,6 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.madelyngander.firebasestoreapp.R
 import com.madelyngander.firebasestoreapp.databinding.ActivityRegisterBinding
+import com.madelyngander.firebasestoreapp.firestore.FirestoreClass
+import com.madelyngander.firebasestoreapp.models.User
 
 class RegisterActivity : BaseActivity() {
     private var binding : ActivityRegisterBinding? = null
@@ -60,19 +62,19 @@ class RegisterActivity : BaseActivity() {
 
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener { task ->
-                    hideProgressDialog()
                     if (task.isSuccessful) {
-                        showErrorSnackBar("You have been registered successfully!", false)
-
-//                        val firebaseUser: FirebaseUser = task.result!!.user!!
-//                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-//                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-//                        intent.putExtra("user_id", firebaseUser.uid)
-//                        intent.putExtra("email_id", email)
-//                        startActivity(intent)
-                        FirebaseAuth.getInstance().signOut()
-                        finish()
+                        val firebaseUser: FirebaseUser = task.result!!.user!!
+                        val user = User(
+                            firebaseUser.uid,
+                            binding?.etFirstName!!.text.toString(),
+                            binding?.etLastName!!.text.toString(),
+                            binding?.etEmail!!.text.toString()
+                        )
+                        FirestoreClass().registerUser(this@RegisterActivity,user)
+//                        FirebaseAuth.getInstance().signOut()
+//                        finish()
                     } else {
+                        hideProgressDialog()
                         showErrorSnackBar(task.exception!!.message.toString(),true)
                     }
                 }
@@ -129,5 +131,10 @@ class RegisterActivity : BaseActivity() {
                 true
             }
         }
+    }
+
+    fun userRegistrationSuccess(){
+        hideProgressDialog()
+        Toast.makeText(this@RegisterActivity,R.string.register_success,Toast.LENGTH_SHORT).show()
     }
 }
