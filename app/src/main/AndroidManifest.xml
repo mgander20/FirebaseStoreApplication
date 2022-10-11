@@ -11,10 +11,12 @@
         android:theme="@style/Theme.FirebaseStoreApp">
         <activity
             android:name=".activity.ForgotPasswordActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.FirebaseStoreApp.NoActionBar" />
         <activity
             android:name=".activity.BaseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.FirebaseStoreApp.NoActionBar" />
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false"
