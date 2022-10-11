@@ -3,7 +3,7 @@ package com.madelyngander.firebasestoreapp.firestore
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
-import com.madelyngander.firebasestoreapp.activity.DashboardFragment
+import com.madelyngander.firebasestoreapp.fragment.DashboardFragment
 import com.madelyngander.firebasestoreapp.activity.RegisterActivity
 import com.madelyngander.firebasestoreapp.models.Product
 import com.madelyngander.firebasestoreapp.models.User

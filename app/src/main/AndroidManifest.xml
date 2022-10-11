@@ -10,13 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseStoreApp">
         <activity
+            android:name=".activity.DashboardActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".activity.ForgotPasswordActivity"
             android:exported="false"
             android:theme="@style/Theme.FirebaseStoreApp.NoActionBar" />
         <activity
             android:name=".activity.BaseActivity"
-            android:exported="false"
-            android:theme="@style/Theme.FirebaseStoreApp.NoActionBar" />
+            android:exported="false" />
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false"
@@ -41,7 +45,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.FirebaseStoreApp.NoActionBar"/>
+            android:theme="@style/Theme.FirebaseStoreApp.NoActionBar" />
     </application>
 
 </manifest>

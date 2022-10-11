@@ -1,14 +1,16 @@
-package com.madelyngander.firebasestoreapp.activity
+package com.madelyngander.firebasestoreapp.fragment
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.recyclerview.widget.GridLayoutManager
 import com.madelyngander.firebasestoreapp.R
+import com.madelyngander.firebasestoreapp.activity.CartListActivity
+import com.madelyngander.firebasestoreapp.activity.ProductDetailsActivity
+import com.madelyngander.firebasestoreapp.activity.SettingsActivity
 import com.madelyngander.firebasestoreapp.adapter.DashboardItemsListAdapter
 import com.madelyngander.firebasestoreapp.databinding.FragmentDashboardBinding
 import com.madelyngander.firebasestoreapp.firestore.FirestoreClass
-import com.madelyngander.firebasestoreapp.fragment.BaseFragment
 import com.madelyngander.firebasestoreapp.models.Product
 import com.madelyngander.firebasestoreapp.utils.Constants
 import kotlinx.android.synthetic.main.fragment_dashboard.*
